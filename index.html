@@ -110,17 +110,17 @@
 						<h2>Neem contact op.</h2>
 						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
 					</header>
-					<div class="box">
-						<form method="post" action="#">
+					<div class="box">					
+						<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSfqY8F65UIzqoeHBlHtxdbnrxRD-vX5Tck5ueOH-T7GBglSdQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+								<div class="field half"><input type="text" name="entry.1760985677" placeholder="Naam" /></div>
+								<div class="field half"><input type="email" name="entry.1869171369" placeholder="Email" /></div>
+								<div class="field"><textarea name="entry.1222422335" placeholder="Boodschap" rows="6"></textarea></div>
 							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
 						</form>
+
+						<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
 					</div>
 				</div>
 			</section>
@@ -154,6 +154,14 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script type="text/javascript">var submitted=false;</script>
+			<script type="text/javascript">
+			$('#gform').on('submit', function(e) {
+			  $('#gform *').fadeOut(2000);
+			  $('#gform').prepend('Your submission has been processed...');
+			  });
+			</script>
 
 	</body>
 </html>
